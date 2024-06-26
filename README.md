@@ -1,50 +1,22 @@
-# TcSem12
-
-## CALCULADORA
+fun validateAge(age: Int): String {
+    
+    //  si la edad es negativa
+    if (age < 0) {
+        return ("REJECTED")
+    }
+    
+    //  la persona es mayor de edad
+    return if (age >= 18) {
+        ("ACCEPTED")
+    } else {
+        ("REJECTED")
+    }
+}
 
 fun main() {
-    println("TDD")
-    if (sumaParesTest()) println("passed") else println("failed")
-    if (sumaImparPrimeroTest()) println("passed") else println("failed")
-    if (sumaImparSegundoTest()) println("passed") else println("failed")
-    if (sumaCuandoLosNumsNegativoTest()) println("passed") else println("failed")
-    if (sumaNumsParesPositivosTest()) println("passed") else println("failed")
-}
-fun sumaPares(a: Int, b: Int):Int {
-    //paso 2 hacer que la prueba pase 
-    if(b% 2 != 0) return -1
-    if(a% 2 != 0) return 4
-    return a+b
-}
-//escribir prueba que falle paso 1
-fun sumaParesTest():Boolean{
-    val actualValue= sumaPares(2,2)
-    val expectedValue = 4
-    return actualValue == expectedValue
+    
+    println(validateAge(18))
+    println(validateAge(-22))
+    println(validateAge(2))
     
 }
-fun sumaImparPrimeroTest():Boolean{
-    val actualValue= sumaPares(5,2)
-    val expectedValue = -1
-    return actualValue == expectedValue
-    
-}
-fun sumaImparSegundoTest():Boolean{
-    val actualValue= sumaPares(2,7)
-    val expectedValue = -1
-    return actualValue == expectedValue
-    
-}
-fun sumaCuandoLosNumsNegativoTest():Boolean{
-    val actualValue= sumaPares(-2,7)
-    val expectedValue = -1
-    return actualValue == expectedValue
-    
-}
-fun sumaNumsParesPositivosTest():Boolean{
-    val actualValue= sumaPares(-2,2)
-    val expectedValue = 4
-    return actualValue == expectedValue
-    
-}
-
